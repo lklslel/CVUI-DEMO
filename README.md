@@ -65,20 +65,5 @@ Simply open the HTML files in a modern web browser (Chrome, Firefox, Edge). No s
 *Note: This project is experimental and will grow step by step.*
 
 
-## About cvui
 
-This project is not meant to replace standards or propose a new one.  
-It was created out of curiosity — to see what could be possible if a UI system  
-were built directly on top of the HTML5 canvas, instead of relying only on the DOM.  
-
-At the time, I felt that the web standards were growing slowly,  
-and I wondered whether JavaScript, as a flexible and less strict language,  
-might allow a different approach to building interfaces.  
-
-The code here should be seen as an experiment,  
-a record of trying out ideas rather than a finished framework.  
-It shows that alternative ways of handling UI and interaction are thinkable,  
-even if they are not always practical or polished.  
-
-No claims, no promises — just an exploration of possibility.
 
