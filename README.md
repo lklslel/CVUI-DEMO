@@ -32,11 +32,10 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 This final step demonstrates a **UI ↔ Data ↔ UI cycle** — similar to modern frameworks — but implemented entirely on a canvas.
 
 ## Live Demo
-If you enable GitHub Pages for this repository, you can view the final demo here
 
-```
-https://lklslel.github.io/cvui-demo/
-```
+You can try the live demo here:  
+[Canvas UI Demo](https://lklslel.github.io/CVUI-DEMO/)
+
 
 ## How to Run Locally
 Simply open the HTML files in a modern web browser (Chrome, Firefox, Edge). No server is required.
