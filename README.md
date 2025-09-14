@@ -36,7 +36,6 @@ This final step demonstrates a **UI ↔ Data ↔ UI cycle** — similar to moder
 You can try the live demo here:  
 [Canvas UI Demo](https://lklslel.github.io/CVUI-DEMO/)
 
-
 ## How to Run Locally
 Simply open the HTML files in a modern web browser (Chrome, Firefox, Edge). No server is required.
 
@@ -45,3 +44,22 @@ Simply open the HTML files in a modern web browser (Chrome, Firefox, Edge). No s
 - Inspirational: Encourage experimentation outside of existing frameworks.
 - Archival: Capture an approach to UI that values low-level control and creativity.
 
+## Roadmap
+
+**Phase 1 (Demo)**
+- Basic grid (cells with input)
+- Formula bar (simple expressions like =A1+B1)
+- Minimal functions: SUM, AVG
+- Basic chart support (bar or line)
+
+**Phase 2 (Extended)**
+- More functions (MIN, MAX, etc.)
+- Additional chart types (pie, area)
+- Basic cell styling (color, bold)
+
+**Phase 3 (Future Ideas)**
+- Image insertion
+- Advanced formulas (IF, VLOOKUP)
+- Collaboration features
+
+*Note: This project is experimental and will grow step by step.*
