@@ -64,6 +64,12 @@ Simply open the HTML files in a modern web browser (Chrome, Firefox, Edge). No s
 
 *Note: This project is experimental and will grow step by step.*
 
+## About cvui
 
+cvui is a small experiment with UI on HTML5 canvas.  
+It was not made to replace standards or to propose a framework.  
+The goal was only to test what might be possible if UI elements  
+were drawn and interacted with directly on canvas.  
 
-
+This code is unfinished and simple, but it records the idea that  
+different approaches to UI can be tried outside of the DOM.
