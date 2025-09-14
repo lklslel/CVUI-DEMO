@@ -3,6 +3,8 @@
 This repository demonstrates how **Canvas + JavaScript** alone can be used to build simple UI systems, without relying on HTML DOM elements.  
 The idea is to show students and developers that JavaScript is inherently flexible and can implement windows, buttons, sliders, and even data-binding on a raw canvas.
 
+This project is licensed under the MIT License - see the LICENSE file for details.
+
 ## Steps
 
 ### 1. Minimal Window (`01_minimal_window.html`)
