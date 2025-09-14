@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>Step 3 — Button + Slider</title></head>
+<body><canvas id="cvui" width="900" height="600"></canvas>
+<script>
+const canvas=document.getElementById('cvui');const ctx=canvas.getContext('2d');
+function createWindow(x,y,w,h,title){return {x,y,w,h,title,dragging:false,children:[],
+ draw(ctx){ctx.fillStyle="#eee";ctx.fillRect(this.x,this.y,this.w,this.h);
+ ctx.fillStyle="#4a76f0";ctx.fillRect(this.x,this.y,this.w,30);
+ ctx.fillStyle="#fff";ctx.fillText(this.title,this.x+8,this.y+20);
+ ctx.save();ctx.translate(this.x,this.y);for(const c of this.children)c.draw(ctx);ctx.restore();},
+ onDown(mx,my){if(mx>this.x&&mx<this.x+this.w&&my>this.y&&my<this.y+30){this.dragging=true;this.offX=mx-this.x;this.offY=my-this.y;}
+ for(const c of this.children)c.onDown(mx-this.x,my-this.y);},
+ onMove(mx,my){if(this.dragging){this.x=mx-this.offX;this.y=my-this.offY;}for(const c of this.children)c.onMove(mx-this.x,my-this.y);},
+ onUp(mx,my){this.dragging=false;for(const c of this.children)c.onUp(mx-this.x,my-this.y);}};}
+function createButton(x,y,w,h,label,cb){return {x,y,w,h,label,pressed:false,
+ onDown(mx,my){if(mx>this.x&&mx<this.x+this.w&&my>this.y&&my<this.y+this.h)this.pressed=true;},
+ onMove(){},onUp(mx,my){if(this.pressed&&mx>this.x&&mx<this.x+this.w&&my>this.y&&my<this.y+this.h)cb();this.pressed=false;},
+ draw(ctx){ctx.fillStyle=this.pressed?"#999":"#ccc";ctx.fillRect(this.x,this.y,this.w,this.h);ctx.strokeRect(this.x,this.y,this.w,this.h);
+ ctx.fillStyle="#000";ctx.fillText(this.label,this.x+10,this.y+this.h/2+5);}};}
+function createSlider(x,y,w,h,min,max,val,cb){return {x,y,w,h,min,max,value:val,drag:false,
+ onDown(mx,my){if(mx>this.x&&mx<this.x+this.w&&my>this.y&&my<this.y+this.h){this.drag=true;this.set(mx);}},
+ onMove(mx){if(this.drag)this.set(mx);},onUp(){this.drag=false;},set(mx){let t=(mx-this.x)/this.w;if(t<0)t=0;if(t>1)t=1;
+ this.value=this.min+t*(this.max-this.min);cb(this.value);},
+ draw(ctx){ctx.fillStyle="#bbb";ctx.fillRect(this.x,this.y+this.h/2-2,this.w,4);
+ let t=(this.value-this.min)/(this.max-this.min),kx=this.x+t*this.w;ctx.fillStyle="#4a76f0";ctx.beginPath();ctx.arc(kx,this.y+this.h/2,8,0,6.28);ctx.fill();
+ ctx.fillStyle="#000";ctx.fillText(this.value.toFixed(0),this.x,this.y+this.h-2);}};}
+const winA=createWindow(60,60,250,160,"Window A");const btn=createButton(20,50,100,40,"Click",()=>console.log("clicked"));winA.children.push(btn);
+const winB=createWindow(350,200,300,180,"Window B");const sld=createSlider(20,60,200,40,0,100,50,v=>console.log("slider",v));winB.children.push(sld);
+let wins=[winA,winB];let active=null;
+canvas.onpointerdown=e=>{let mx=e.offsetX,my=e.offsetY;for(let i=wins.length-1;i>=0;i--){let w=wins[i];w.onDown(mx,my);
+ if(w.dragging){active=w;wins.splice(i,1);wins.push(w);break;}}};
+canvas.onpointermove=e=>{if(active)active.onMove(e.offsetX,e.offsetY);};
+canvas.onpointerup=e=>{if(active)active.onUp(e.offsetX,e.offsetY);active=null;};
+function loop(){ctx.clearRect(0,0,canvas.width,canvas.height);for(let w of wins)w.draw(ctx);requestAnimationFrame(loop);}loop();
+</script></body></html>

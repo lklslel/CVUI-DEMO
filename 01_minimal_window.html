@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>Step 1 — Minimal Window</title></head>
+<body><canvas id="cvui" width="600" height="400"></canvas>
+<script>
+const canvas=document.getElementById('cvui'); const ctx=canvas.getContext('2d');
+const win={x:50,y:50,w:200,h:150,title:"Window",dragging:false};
+function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);
+ ctx.fillStyle="#eee"; ctx.fillRect(win.x,win.y,win.w,win.h);
+ ctx.fillStyle="#4a76f0"; ctx.fillRect(win.x,win.y,win.w,30);
+ ctx.fillStyle="#fff"; ctx.font="16px sans-serif"; ctx.fillText(win.title,win.x+8,win.y+20);}
+canvas.addEventListener('pointerdown',e=>{let mx=e.offsetX,my=e.offsetY;
+ if(mx>win.x&&mx<win.x+win.w&&my>win.y&&my<win.y+30){win.dragging=true; win.offX=mx-win.x; win.offY=my-win.y;}});
+canvas.addEventListener('pointermove',e=>{if(win.dragging){win.x=e.offsetX-win.offX; win.y=e.offsetY-win.offY;}});
+canvas.addEventListener('pointerup',()=>{win.dragging=false;});
+function loop(){draw(); requestAnimationFrame(loop);} loop();
+</script></body></html>

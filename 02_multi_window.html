@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>Step 2 — Multi Window + FPS</title></head>
+<body><canvas id="cvui" width="800" height="500"></canvas>
+<script>
+const canvas=document.getElementById('cvui'); const ctx=canvas.getContext('2d');
+function createWindow(x,y,w,h,title,isFPS=false){return {x,y,w,h,title,isFPS,dragging:false,fps:0,fc:0,last:performance.now(),
+ draw(ctx){ctx.fillStyle="#eee";ctx.fillRect(this.x,this.y,this.w,this.h);
+ ctx.fillStyle="#4a76f0";ctx.fillRect(this.x,this.y,this.w,30);
+ ctx.fillStyle="#fff";ctx.fillText(this.title,this.x+8,this.y+20);
+ if(this.isFPS){let now=performance.now();this.fc++;if(now-this.last>1000){this.fps=this.fc;this.fc=0;this.last=now;}
+ ctx.fillStyle="#000";ctx.fillText("FPS:"+this.fps,this.x+10,this.y+60);}},
+ hit(mx,my){return(mx>this.x&&mx<this.x+this.w&&my>this.y&&my<this.y+30);}};}
+let wins=[createWindow(50,50,200,150,"Win A"),createWindow(200,150,250,180,"Win B"),createWindow(500,80,200,120,"FPS",true)];
+let active=null;
+canvas.onpointerdown=e=>{let mx=e.offsetX,my=e.offsetY;
+ for(let i=wins.length-1;i>=0;i--){let w=wins[i];if(w.hit(mx,my)){w.dragging=true;w.offX=mx-w.x;w.offY=my-w.y;active=w;wins.splice(i,1);wins.push(w);break;}}};
+canvas.onpointermove=e=>{if(active){active.x=e.offsetX-active.offX;active.y=e.offsetY-active.offY;}};
+canvas.onpointerup=()=>{if(active)active.dragging=false;active=null;};
+function loop(){ctx.clearRect(0,0,canvas.width,canvas.height);for(let w of wins)w.draw(ctx);requestAnimationFrame(loop);}loop();
+</script></body></html>
