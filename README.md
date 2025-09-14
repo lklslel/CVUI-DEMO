@@ -32,7 +32,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 This final step demonstrates a **UI ↔ Data ↔ UI cycle** — similar to modern frameworks — but implemented entirely on a canvas.
 
 ## Live Demo
-If you enable GitHub Pages for this repository, you can view the final demo here (replace `username` with your GitHub ID):
+If you enable GitHub Pages for this repository, you can view the final demo here
 
 ```
 https://lklslel.github.io/cvui-demo/
