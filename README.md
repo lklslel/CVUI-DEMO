@@ -1,3 +1,4 @@
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 # CVUI Demo — Canvas-based UI Experiments
 
 This repository demonstrates how **Canvas + JavaScript** alone can be used to build simple UI systems, without relying on HTML DOM elements.  
