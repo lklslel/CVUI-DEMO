@@ -32,7 +32,7 @@ This final step demonstrates a **UI ↔ Data ↔ UI cycle** — similar to moder
 If you enable GitHub Pages for this repository, you can view the final demo here (replace `username` with your GitHub ID):
 
 ```
-https://username.github.io/cvui-demo/
+https://lklslel.github.io/cvui-demo/
 ```
 
 ## How to Run Locally
