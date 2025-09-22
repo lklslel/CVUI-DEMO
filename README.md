@@ -1,6 +1,8 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 # CVUI Demo — Canvas-based UI Experiments
 
+This project is not related to cvui (C++ OpenCV UI library). It is a pure JavaScript + Canvas ultra-light UI experiment.
+
 This repository demonstrates how **Canvas + JavaScript** alone can be used to build simple UI systems, without relying on HTML DOM elements.  
 The idea is to show students and developers that JavaScript is inherently flexible and can implement windows, buttons, sliders, and even data-binding on a raw canvas.
 
