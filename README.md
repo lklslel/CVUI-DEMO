@@ -54,16 +54,17 @@ Simply open the HTML files in a modern web browser (Chrome, Firefox, Edge). No s
 - Basic User Interface implementation on the HTML5 <CANVAS> with PURE JS(like Windows OS)
 
 @ Why need to implementation to UI on <CANVAS> TAG?
-: DOM has to Heavy Weight and High Cost since HTML5.
-: canvas vs DOM ; System Performance differents you can see. random noise in canvas's 500 × 500 area / random string update of 50 input tags.
-: CANVAS VS INPUT : WINNER was CANVAS in 2015. CANVAS tag has Performance and Speed at ALL in NOW.
+1. DOM has to Heavy Weight and High Cost since HTML5.
+2. canvas vs DOM ; System Performance differents has. random noise in canvas's 500 × 500 area / random string update of 50 input tags.
+2-1. CANVAS VS INPUT : WINNER was CANVAS in 2015. CANVAS tag has Performance and Speed at ALL in NOW.
 
 - korean IME implementation without <INPUT>. Window Object Can Keyboard Event Listening without <INPUT>
 
-@ Why Do This Ways? Human wants convenience.
-so, add the HotKey or Shortcut;
-TAB : Move to Tab index
-Alt-F4 : close the window, ...
+@ Why Do This Ways?
+- Whole Human wants convenience.
+- so, add the HotKey or Shortcut;
+- TAB : Move to Tab index
+- Alt-F4 : close the window, ...
 So, Web Browser Can Detect Key Input WITHOUT <input> tag.
 
 You can see the next;
