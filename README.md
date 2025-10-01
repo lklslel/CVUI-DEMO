@@ -51,14 +51,14 @@ Simply open the HTML files in a modern web browser (Chrome, Firefox, Edge). No s
 
 **Phase 0 algorithm & architecture design** <<- Now Here
 
-- Basic User Interface implementation on the HTML5 <CANVAS> with PURE JS(like Windows OS)
+- Basic User Interface implementation on the HTML5 CANVAS with PURE JS(like Windows OS)
 
-@ Why need to implementation to UI on <CANVAS> TAG?
+@ Why need to implementation to UI on CANVAS TAG?
 1. DOM has to Heavy Weight and High Cost since HTML5.
 2. canvas vs DOM ; System Performance differents has. random noise in canvas's 500 × 500 area / random string update of 50 input tags.
 2-1. CANVAS VS INPUT : WINNER was CANVAS in 2015. CANVAS tag has Performance and Speed at ALL in NOW.
 
-- korean IME implementation without <INPUT>. Window Object Can Keyboard Event Listening without <INPUT>
+- korean IME implementation without INPUT TAG. Window Object Can Keyboard Event Listening without INPUT TAG
 
 @ Why Do This Ways?
 - Whole Human wants convenience.
@@ -69,9 +69,9 @@ So, Web Browser Can Detect Key Input WITHOUT <input> tag.
 
 You can see the next;
 
-1. add the key event on the ' Document ' OBJECT
+1. places script tag on the head or body tag
 2. write down ' consloe.log(e.key); ' in Key Event Listener
-3. Add Key Event Listener
+3. Add Key Event Listener to ' Document ' OBJECT
 4. Open the Developer Tool
 5. Select Console Tab Menu.
 6. Just One Click On the Webpage. and press key and look around to Console
